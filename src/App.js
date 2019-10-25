@@ -1,14 +1,24 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./App.css";
 import SpaceCard from './components/SpaceCard';
-import TextComp from './components/TextComp';
+import CardInfo from "./components/CardInfo";
+import axios from 'axios';
 
 function App() {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+      axios.get('https://api.nasa.gov/planetary/apod?api_key=EzeObyP91MSsBjv4GWZpWbx9qxjYDoozapCA0n8D')
+      .then(response => {
+              console.log(response)
+              setData(response.data)
+       });
+  }, []);
+
+
   return (
     <div className="App">
-      <SpaceCard />
-      <TextComp />
-      
+      <SpaceCard data={response.data} />
+      <CardInfo data={response.data}/>
     </div>
   );
 };
