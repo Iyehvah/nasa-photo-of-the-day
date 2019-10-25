@@ -10,13 +10,17 @@ export default function SpaceCard(){
         .then(response => {
                 console.log(response.data)
                 setData(response.data)
+                const props = response.data;
          });
     }, []);
 
+
+
     return (
-        <div>
-            <h2>{data.date}</h2>
-            <img src ={data.url}/>
+        <div className = "mainContainer">
+            <h2> {data.date}</h2>
+            <img src ={data.url} alt=" "/>
+            <p>{data.explanation}</p>
         </div>
     )
 };
