@@ -17,8 +17,8 @@ function App() {
 
   return (
     <div className="App">
-      <SpaceCard data={response.data} />
-      <CardInfo data={response.data}/>
+      <CardInfo data={data}/>
+      <SpaceCard data={data} />
     </div>
   );
 };

@@ -1,9 +1,11 @@
 import React from 'react';
 
-export default function SpaceCard(data){
+const SpaceCard = props => {
     return (
         <div>
-            <img src ={data.url} alt=" "/>
+            <img src ={props.data.url} alt=" "/>
         </div>
     )
 };
+
+export default SpaceCard;
