@@ -3,6 +3,16 @@ import "./App.css";
 import SpaceCard from './components/SpaceCard';
 import CardInfo from "./components/CardInfo";
 import axios from 'axios';
+import styled from 'styled-components';
+
+
+const WrapperDiv = styled.div`
+  font-family: Consolas;
+  text-align: center;
+  color: purple;
+
+  `;
+
 
 function App() {
   const [data, setData] = useState([]);
@@ -16,10 +26,10 @@ function App() {
 
 
   return (
-    <div className="App">
+    <WrapperDiv>
       <CardInfo data={data}/>
       <SpaceCard data={data} />
-    </div>
+    </WrapperDiv>
   );
 };
 
